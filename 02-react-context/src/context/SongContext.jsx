@@ -2,16 +2,17 @@ import { createContext, useState, useEffect } from 'react'
 // import canciones from '../../assets/listaCanciones.json'
 import canciones from '@/assets/listaCanciones.json'
 
-// Paso 1. Crear el contexto
+// Paso #1: Crear el contexto
 const SongContext = createContext()
 
-// Paso 2. Crear el provedor del contexto
-// El proveedor maneja de donde se obtiene la informacion y como se comparte.
-// El proveedor es un COMPONENTE envuelve a los compoente que va a usar el contexto.
+// Paso #2: Crear el proveedor del contexto
+// El proveedor maneja de donde se obtiene la información y como se comparte.
+// El proveedor es un COMPONENTE que envuelve a los componentes que van a usar el contexto.
+
 function SongProvider ({ children }) {
-  const [list, setList] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [selectedSong, setselectedSong] = useState({})
+  const [list, setList] = useState([]) // Lista de canciones
+  const [loading, setLoading] = useState(true) // ¿Esta cargando?
+  const [selectedSong, setSelectedSong] = useState({}) // Canción seleccionada
 
   // Simular una llamada a la API con la lista de canciones
   useEffect(() => {
@@ -21,12 +22,12 @@ function SongProvider ({ children }) {
     }, 2000)
   }, [])
 
-  // Crear un objeto con la información que va a tener el contexto
+  // Crear un objeto con la información que va a tener el contexto.
   const data = {
     list,
     loading,
     selectedSong,
-    setselectedSong
+    setSelectedSong
   }
 
   return (
@@ -36,12 +37,12 @@ function SongProvider ({ children }) {
   )
 }
 
-// Exportar las funcinoes para que puedan accederse
+// Exportar las funciones para que puedan accederse
 export {
   SongContext,
   SongProvider
 }
 
-/* Uso de CONTEXT */
+/* USO DE CONTEXT */
 
-// Paso 4. Ahora debo ir a un componente de orden superior (Home.jsx) y envolverlo con el proveedor del contexto con la etiqueta <SongProvider> </SongProvider>
+// Paso #4: Ahora debo ir a un componente de orden superior (Home.jsx) y envolverlo con el proveedor del contexto con la etiqueta <SongProvider>.
