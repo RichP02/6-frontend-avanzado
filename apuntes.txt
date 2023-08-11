@@ -1,5 +1,5 @@
 Para poder crear un archvio react
-npm install vite@latest nombre_proyecto -- --template react
+npm create vite@latest nombre_proyecto -- --template react
 
 cd nombre_proyecto
 npm install
@@ -11,6 +11,25 @@ npm i standard -D
 buscar el archvio .eslintrc y agregar en extends :
     'standard',
     'standard-jsx'
-Despues en rules agregar, 'react/prop-types': 'off'
+
+Despues en rules agregar
+,
+    'react/prop-types': 'off'
+
+Eliminar == '.eslintrc.cjs' de ignorePatterns: ['dist', '.eslintrc.cjs']
 
 
+Configurar alias para mis carpetas
+Bucar archvio vite.config.js
+import path from 'path' // añado el path
+
+despues de plugins: [react()],
+// Configuro Alias para mis Carpetas
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src')
+    }
+  }
+
+
+En asset se deben de guardar cosas estaticas
