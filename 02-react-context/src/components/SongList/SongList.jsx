@@ -1,6 +1,9 @@
+import { useSongContext } from '@/hooks/useSongContext'
 import './songlist.css'
 
 const SongList = () => {
+  const { list, loading } = useSongContext()
+
   return (
     <>
       {loading
