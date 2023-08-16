@@ -4,7 +4,8 @@ import path from 'path' // añado el path
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()], // Configuro Alias para mis Carpetas
+  plugins: [react()],
+  // Configuro Alias para mis Carpetas
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src')
