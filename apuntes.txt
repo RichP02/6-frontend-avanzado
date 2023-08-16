@@ -31,5 +31,12 @@ despues de plugins: [react()],
     }
   }
 
-
 En asset se deben de guardar cosas estaticas
+
+
+
+npm i axios
+npm i bootstrap
+npm i react-router-dom
+
+npm i sass -D
