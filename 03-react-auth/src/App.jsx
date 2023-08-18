@@ -1,17 +1,15 @@
 import './App.css'
-import { Home, Dashborad, Login, SingUp, Secret } from '@/pages'
-import Header from './components/Header/Header'
+import Header from '@/components/Header/Header'
+import { BrowserRouter } from 'react-router-dom'
+import RoutesIndex from './routes'
 
 function App () {
   return (
     <>
-      <Header />
-      <h1>React App</h1>
-      <Home />
-      <Dashborad />
-      <Login />
-      <SingUp />
-      <Secret />
+      <BrowserRouter>
+        <Header />
+        <RoutesIndex />
+      </BrowserRouter>
     </>
   )
 }

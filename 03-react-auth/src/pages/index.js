@@ -1,13 +1,13 @@
-import Dashborad from './Dashborad'
+import Dashboard from './Dashboard'
 import Home from './Home'
 import Login from './Login'
 import Secret from './Secret'
-import SingUp from './SingUp'
+import Signup from './Signup'
 
 export {
-  Dashborad,
+  Dashboard,
   Home,
   Login,
   Secret,
-  SingUp
+  Signup
 }
